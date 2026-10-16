@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app
+  namespace: default
+  labels:
+    app: test-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: test-app
+  template:
+    metadata:
+      labels:
+        app: test-app
+    spec:
+      containers:
+        - name: test-app
+          image: docker.io/lolkeenn/flux-solo-app:0.0.9 # {"$imagepolicy": "flux-system:flux-solo-app"}
+          ports:
+            - containerPort: 8080

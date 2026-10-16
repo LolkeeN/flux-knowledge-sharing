@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: test-app
+spec:
+  url: https://github.com/LolkeeN/flux-knowledge-sharing
+  ref:
+    branch: master
