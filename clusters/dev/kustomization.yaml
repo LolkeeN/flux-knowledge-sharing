@@ -9,3 +9,8 @@ spec:
   path: ./infrastructure/app
   interval: 5m
   prune: true
+
+resources:
+  - ./image-policy.yaml
+  - ./image-repository.yaml
+  - ./image-update-automation.yaml
