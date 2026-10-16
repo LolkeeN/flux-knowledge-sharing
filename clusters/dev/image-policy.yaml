@@ -1,0 +1,14 @@
+apiVersion: image.toolkit.fluxcd.io/v1
+kind: ImagePolicy
+metadata:
+  name: test-app
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: test-app
+  filterTags:
+    pattern: "^(?P<timestamp>[0-9]{14})-[a-f0-9]{40}$"
+    extract: "$timestamp"
+  policy:
+    numerical:
+      order: asc
